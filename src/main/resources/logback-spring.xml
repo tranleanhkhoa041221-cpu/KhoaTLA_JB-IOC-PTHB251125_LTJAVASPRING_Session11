@@ -1,0 +1,73 @@
+<configuration>
+
+    <!-- ===== CONSOLE (COLOR + MDC) ===== -->
+    <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>
+                [%X{requestId}] %yellow(%d{dd/MM/yyyy HH:mm:ss}) %highlight(%-5level) %cyan(%logger{36}) - %msg%n
+            </pattern>
+        </encoder>
+    </appender>
+
+    <!-- ===== FULL LOG FILE (2MB + GZ + 7 DAYS) ===== -->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>logs/patient_web_service.log</file>
+
+        <encoder>
+            <pattern>
+                [%X{requestId}] %d{dd/MM/yyyy HH:mm:ss} %-5level %logger - %msg%n
+            </pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                logs/patient_web_service.%d{yyyy-MM-dd}.%i.log.gz
+            </fileNamePattern>
+            <maxFileSize>2MB</maxFileSize>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+    </appender>
+
+    <!-- ===== ERROR FILE (2MB + GZ + 7 DAYS) ===== -->
+    <appender name="ERROR_FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+
+        <file>logs/emergency.log</file>
+
+        <filter class="ch.qos.logback.classic.filter.LevelFilter">
+            <level>ERROR</level>
+            <onMatch>ACCEPT</onMatch>
+            <onMismatch>DENY</onMismatch>
+        </filter>
+
+        <encoder>
+            <pattern>
+                [%X{requestId}] %d{dd/MM/yyyy HH:mm:ss} %-5level %logger - %msg%n
+            </pattern>
+        </encoder>
+
+        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+            <fileNamePattern>
+                logs/emergency.%d{yyyy-MM-dd}.%i.log.gz
+            </fileNamePattern>
+            <maxFileSize>2MB</maxFileSize>
+            <maxHistory>7</maxHistory>
+        </rollingPolicy>
+
+    </appender>
+
+    <!-- ===== LOGGER ===== -->
+    <logger name="org.hibernate.SQL" level="DEBUG"/>
+<!--    <logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="TRACE"/>-->
+    <logger name="org.hibernate.orm.jdbc.bind" level="TRACE"/>
+    <logger name="com.medical.service" level="TRACE"/>
+
+    <!-- ===== ROOT ===== -->
+    <root level="INFO">
+        <appender-ref ref="CONSOLE"/>
+        <appender-ref ref="FILE"/>
+        <appender-ref ref="ERROR_FILE"/>
+    </root>
+
+</configuration>
