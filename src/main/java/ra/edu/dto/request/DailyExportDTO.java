@@ -1,18 +1,16 @@
-package ra.edu.dto.response;
+package ra.edu.dto.request;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class ErrorResponse {
-    private String message;
-    private List<String> errors;
-    private String status;
+public class DailyExportDTO {
+    private Long supplyId;
+    private String supplyName;
+    private Long totalExportQuantity;
 }

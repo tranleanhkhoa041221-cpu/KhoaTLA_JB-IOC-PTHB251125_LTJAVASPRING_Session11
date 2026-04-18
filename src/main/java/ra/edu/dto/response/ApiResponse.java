@@ -5,14 +5,12 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class ErrorResponse {
-    private String message;
-    private List<String> errors;
+public class ApiResponse<T>{
     private String status;
+    private String message;
+    private T data;
 }
