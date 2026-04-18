@@ -81,3 +81,176 @@
 [0baabeb5-0ea3-414e-bb64-84391a80d05a] 18/04/2026 14:35:42 TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:TIMESTAMP) <- [null]
 [0baabeb5-0ea3-414e-bb64-84391a80d05a] 18/04/2026 14:35:42 INFO  ra.edu.service.SupplyService - Tạo vật tư: Bút bi Thiên Long - ID 1
 [0baabeb5-0ea3-414e-bb64-84391a80d05a] 18/04/2026 14:35:43 INFO  ra.edu.logging.RequestIdFilter - END REQUEST
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        supply
+        (created_at, deleted, name, provider, quantity, specification, updated_at) 
+    values
+        (?, ?, ?, ?, ?, ?, ?)
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:TIMESTAMP) <- [2026-04-18T14:39:45.316096]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:BOOLEAN) <- [false]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [Bút chì 2B]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [Deli]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:INTEGER) <- [0]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:VARCHAR) <- [Dùng vẽ]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:TIMESTAMP) <- [null]
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 INFO  ra.edu.service.SupplyService - Tạo vật tư: Bút chì 2B - ID 2
+[66727d40-c166-45f6-a7d1-1e31230b9461] 18/04/2026 14:39:45 INFO  ra.edu.logging.RequestIdFilter - END REQUEST
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.deleted,
+        s1_0.name,
+        s1_0.provider,
+        s1_0.quantity,
+        s1_0.specification,
+        s1_0.updated_at 
+    from
+        supply s1_0 
+    where
+        s1_0.id=?
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BIGINT) <- [1]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 DEBUG org.hibernate.SQL - 
+    update
+        supply 
+    set
+        deleted=?,
+        name=?,
+        provider=?,
+        quantity=?,
+        specification=?,
+        updated_at=? 
+    where
+        id=?
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BOOLEAN) <- [false]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [Bút bi Thiên Long]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [Thiên Long]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:INTEGER) <- [100]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [Mực xanh, 0.5mm]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:TIMESTAMP) <- [2026-04-18T14:41:32.236789500]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:BIGINT) <- [1]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        transaction
+        (amount, created_at, supply_id, type) 
+    values
+        (?, ?, ?, ?)
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [100]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:TIMESTAMP) <- [2026-04-18T14:41:32.253951]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:BIGINT) <- [1]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [IMPORT]
+[a2822899-1cc2-457d-bbb3-e7e1117e0ec2] 18/04/2026 14:41:32 INFO  ra.edu.logging.RequestIdFilter - END REQUEST
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.deleted,
+        s1_0.name,
+        s1_0.provider,
+        s1_0.quantity,
+        s1_0.specification,
+        s1_0.updated_at 
+    from
+        supply s1_0 
+    where
+        s1_0.id=?
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BIGINT) <- [2]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 DEBUG org.hibernate.SQL - 
+    update
+        supply 
+    set
+        deleted=?,
+        name=?,
+        provider=?,
+        quantity=?,
+        specification=?,
+        updated_at=? 
+    where
+        id=?
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BOOLEAN) <- [false]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [Bút chì 2B]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [Deli]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:INTEGER) <- [120]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [Dùng vẽ]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:TIMESTAMP) <- [2026-04-18T14:42:56.169806700]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:BIGINT) <- [2]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        transaction
+        (amount, created_at, supply_id, type) 
+    values
+        (?, ?, ?, ?)
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [120]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:TIMESTAMP) <- [2026-04-18T14:42:56.174800]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:BIGINT) <- [2]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [IMPORT]
+[7d422693-8eae-4dc8-a5e6-909357cd69ec] 18/04/2026 14:42:56 INFO  ra.edu.logging.RequestIdFilter - END REQUEST
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 DEBUG org.hibernate.SQL - 
+    select
+        s1_0.id,
+        s1_0.created_at,
+        s1_0.deleted,
+        s1_0.name,
+        s1_0.provider,
+        s1_0.quantity,
+        s1_0.specification,
+        s1_0.updated_at 
+    from
+        supply s1_0 
+    where
+        s1_0.id=?
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BIGINT) <- [1]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 DEBUG org.hibernate.SQL - 
+    update
+        supply 
+    set
+        deleted=?,
+        name=?,
+        provider=?,
+        quantity=?,
+        specification=?,
+        updated_at=? 
+    where
+        id=?
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:BOOLEAN) <- [false]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:VARCHAR) <- [Bút bi Thiên Long]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:VARCHAR) <- [Thiên Long]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:INTEGER) <- [60]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (5:VARCHAR) <- [Mực xanh, 0.5mm]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (6:TIMESTAMP) <- [2026-04-18T14:43:34.131627]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (7:BIGINT) <- [1]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 DEBUG org.hibernate.SQL - 
+    insert 
+    into
+        transaction
+        (amount, created_at, supply_id, type) 
+    values
+        (?, ?, ?, ?)
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:INTEGER) <- [40]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (2:TIMESTAMP) <- [2026-04-18T14:43:34.135616]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (3:BIGINT) <- [1]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 TRACE org.hibernate.orm.jdbc.bind - binding parameter (4:VARCHAR) <- [EXPORT]
+[e5d21c73-a240-4694-ba5f-7016177ca77c] 18/04/2026 14:43:34 INFO  ra.edu.logging.RequestIdFilter - END REQUEST
+[cd695f6e-02b1-4c56-9dd7-c89b39c00d38] 18/04/2026 14:49:36 DEBUG org.hibernate.SQL - 
+    select
+        t1_0.supply_id,
+        s1_0.name,
+        sum(t1_0.amount) 
+    from
+        transaction t1_0 
+    join
+        supply s1_0 
+            on s1_0.id=t1_0.supply_id 
+    where
+        t1_0.type=? 
+        and date(t1_0.created_at)=current_date 
+    group by
+        t1_0.supply_id,
+        s1_0.name
+[cd695f6e-02b1-4c56-9dd7-c89b39c00d38] 18/04/2026 14:49:36 TRACE org.hibernate.orm.jdbc.bind - binding parameter (1:VARCHAR) <- [EXPORT]
+[cd695f6e-02b1-4c56-9dd7-c89b39c00d38] 18/04/2026 14:49:36 INFO  statistics - Daily export done in 92 ms
+[cd695f6e-02b1-4c56-9dd7-c89b39c00d38] 18/04/2026 14:49:36 INFO  ra.edu.logging.RequestIdFilter - END REQUEST
